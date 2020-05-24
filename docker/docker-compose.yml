@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+  cassandra:
+    image: cassandra
+    ports:
+      - '9042:9042'
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: microservice-app
+    ports:
+      - '3306:3306'
+
+  elasticsearch:
+    image: elasticsearch:6.8.5
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      discovery.type: single-node
+
+
+
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: booked
+
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017'
+    command: --serviceExecutor adaptive

@@ -1,0 +1,18 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: appointment-service
+
+  data:
+    mongodb:
+      database: booked
+      uri: mongodb://localhost:27017
+
+eureka:
+  client:
+    instance:
+      hostname: localhost
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/

@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: customer-service
+
+eureka:
+  client:
+    instance:
+      hostname: localhost
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/
+
+booked:
+  cassandra:
+    contact:
+      point: 127.0.0.1
+    port : 9042
+    keyspace:
+      name: booked
+
+    username : cassandra
+    password : cassandra
